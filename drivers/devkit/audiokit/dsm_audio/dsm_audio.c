@@ -100,12 +100,12 @@ static void audio_dsm_deinit(void)
 	int i;
     if (!dsm_audio_client_table)
         return;
-	for (i = 0; i < AUDIO_DEVICE_MAX; i++) {
-		if (dsm_audio_client_table[i].dsm_str_info_buffer) {
-			kfree(dsm_audio_client_table[i].dsm_str_info_buffer);
-			dsm_audio_client_table[i].dsm_str_info_buffer = NULL;
-		}
-	}
+    for (i = 0; i < AUDIO_DEVICE_MAX; i++) {
+        if (dsm_audio_client_table[i].dsm_str_info_buffer) {
+            kfree(dsm_audio_client_table[i].dsm_str_info_buffer);
+            dsm_audio_client_table[i].dsm_str_info_buffer = NULL;
+        }
+    }
     kfree(dsm_audio_client_table);
     dsm_audio_client_table = NULL;
 #endif
